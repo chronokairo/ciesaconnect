@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avisos Acadêmicos - CIESA Connect</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para a página de avisos */
+        .filtros {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .filtro-btn {
+            background: #005f6b;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .filtro-btn:hover {
+            background: #007a86;
+        }
+        .filtro-btn.ativo {
+            background: #007a86;
+            font-weight: bold;
+        }
+        .busca {
+            margin-bottom: 20px;
+        }
+        .busca input {
+            padding: 8px;
+            width: 80%;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+        }
+        .busca button {
+            padding: 8px 15px;
+            background: #005f6b;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .aviso {
+            background: #f9f9f9;
+            border-left: 4px solid #005f6b;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 5px 5px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .aviso-data {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .aviso-titulo {
+            margin: 5px 0;
+            color: #005f6b;
+        }
+        .aviso-tipo {
+            display: inline-block;
+            padding: 3px 8px;
+            background: #e0f7fa;
+            color: #005f6b;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+        .aviso-conteudo {
+            margin-top: 10px;
+        }
+        .comentarios {
+            margin-top: 10px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+        .comentario-form {
+            margin-top: 10px;
+        }
+        .comentario-form textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .comentario-form button {
+            background: #005f6b;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .paginacao {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .paginacao button {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .paginacao button.atual {
+            background: #005f6b;
+            color: white;
+            border-color: #005f6b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CIESA Connect</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="avisos.html" class="ativo">Avisos</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="#sobre">Sobre</a>
+    </nav>
+
+    <div class="container">
+        <h2>Avisos Acadêmicos e Administrativos</h2>
+        
+        <!-- Barra de busca -->
+        <div class="busca">
+            <input type="text" id="busca-input" placeholder="Buscar avisos...">
+            <button id="busca-btn">Buscar</button>
+        </div>
+        
+        <!-- Filtros -->
+        <div class="filtros">
+            <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+            <button class="filtro-btn" data-filtro="academico">Acadêmicos</button>
+            <button class="filtro-btn" data-filtro="administrativo">Administrativos</button>
+            <button class="filtro-btn" data-filtro="urgente">Urgentes</button>
+        </div>
+        
+        <!-- Lista de avisos -->
+        <div class="avisos-container" id="avisos-lista">
+            <!-- Exemplo de aviso acadêmico -->
+            <div class="aviso" data-tipo="academico">
+                <div class="aviso-data">26/04/2025</div>
+                <span class="aviso-tipo">Acadêmico</span>
+                <h3 class="aviso-titulo">Alteração na data da prova de Programação Web</h3>
+                <div class="aviso-conteudo">
+                    <p>Informamos que a prova de Programação Web foi alterada para o dia 05/05/2025. Todos os alunos devem comparecer ao laboratório 3 às 19h.</p>
+                </div>
+                <div class="comentarios">
+                    <h4>Comentários (2)</h4>
+                    <div class="comentario">
+                        <p><strong>Ana Silva:</strong> Professor, esta alteração vale para turmas da manhã também?</p>
+                    </div>
+                    <div class="comentario">
+                        <p><strong>Prof. Carlos:</strong> Sim, Ana. Vale para todas as turmas de Programação Web.</p>
+                    </div>
+                    <div class="comentario-form">
+                        <textarea placeholder="Deixe seu comentário..."></textarea>
+                        <button>Comentar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exemplo de aviso administrativo -->
+            <div class="aviso" data-tipo="administrativo">
+                <div class="aviso-data">25/04/2025</div>
+                <span class="aviso-tipo">Administrativo</span>
+                <h3 class="aviso-titulo">Manutenção nos laboratórios de informática</h3>
+                <div class="aviso-conteudo">
+                    <p>Comunicamos que os laboratórios de informática 1 e 2 ficarão indisponíveis nos dias 27 e 28 de abril para manutenção dos equipamentos.</p>
+                </div>
+                <div class="comentarios">
+                    <h4>Comentários (0)</h4>
+                    <div class="comentario-form">
+                        <textarea placeholder="Deixe seu comentário..."></textarea>
+                        <button>Comentar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exemplo de aviso urgente -->
+            <div class="aviso" data-tipo="urgente">
+                <div class="aviso-data">24/04/2025</div>
+                <span class="aviso-tipo">Urgente</span>
+                <h3 class="aviso-titulo">Prorrogação do prazo de matrícula</h3>
+                <div class="aviso-conteudo">
+                    <p>Informamos que o prazo para renovação de matrícula foi prorrogado até 30/04/2025. Os alunos que ainda não realizaram a renovação devem procurar a secretaria acadêmica.</p>
+                </div>
+                <div class="comentarios">
+                    <h4>Comentários (1)</h4>
+                    <div class="comentario">
+                        <p><strong>Pedro Alves:</strong> A renovação pode ser feita online também?</p>
+                    </div>
+                    <div class="comentario-form">
+                        <textarea placeholder="Deixe seu comentário..."></textarea>
+                        <button>Comentar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Paginação -->
+        <div class="paginacao">
+            <button>Anterior</button>
+            <button class="atual">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>Próximo</button>
+        </div>
+    </div>
+
+    <footer>
+        <button id="back-to-top">&#8593;</button>
+        &copy; 2025 - CIESA Connect | Centro Universitário de Ensino Superior do Amazonas
+    </footer>
+    
+    <script>
+        // Implementação da funcionalidade de filtros
+        document.querySelectorAll('.filtro-btn').forEach(botao => {
+            botao.addEventListener('click', function() {
+                // Remove a classe ativo de todos os botões
+                document.querySelectorAll('.filtro-btn').forEach(btn => {
+                    btn.classList.remove('ativo');
+                });
+                
+                // Adiciona a classe ativo ao botão clicado
+                this.classList.add('ativo');
+                
+                // Obtém o tipo de filtro
+                const filtro = this.getAttribute('data-filtro');
+                
+                // Filtra os avisos
+                document.querySelectorAll('.aviso').forEach(aviso => {
+                    if (filtro === 'todos' || aviso.getAttribute('data-tipo') === filtro) {
+                        aviso.style.display = 'block';
+                    } else {
+                        aviso.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Implementação da busca
+        document.getElementById('busca-btn').addEventListener('click', function() {
+            const termoBusca = document.getElementById('busca-input').value.toLowerCase();
+            
+            document.querySelectorAll('.aviso').forEach(aviso => {
+                const titulo = aviso.querySelector('.aviso-titulo').textContent.toLowerCase();
+                const conteudo = aviso.querySelector('.aviso-conteudo').textContent.toLowerCase();
+                
+                if (titulo.includes(termoBusca) || conteudo.includes(termoBusca)) {
+                    aviso.style.display = 'block';
+                } else {
+                    aviso.style.display = 'none';
+                }
+            });
+        });
+
+        // Implementação do botão voltar ao topo
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

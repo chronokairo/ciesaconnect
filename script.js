@@ -1,13 +1,13 @@
 
         // Rolagem suave
-        document.querySelectorAll('nav a').forEach(anchor => {
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
-        });
+        });   
 
         // Botão de voltar ao topo
         const backToTop = document.getElementById('back-to-top');
