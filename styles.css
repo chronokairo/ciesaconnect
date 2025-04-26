@@ -1,14 +1,23 @@
 /* ===== Paleta de Cores ===== */
 :root {
-    --cor-primaria: #273b7d; /* Azul escuro */
-    --cor-secundaria: #4159a3; /* Azul médio */
-    --cor-fundo: #eef1f9; /* Azul claro */
-    --cor-botao: #273b7d; /* Azul escuro para botões */
-    --cor-hover-botao: #4159a3; /* Azul médio para hover */
-    --cor-texto-principal: #4f5d75; /* Azul acinzentado */
-    --cor-titulo: #1b3b6f; /* Azul mais escuro */
-    --cor-borda: #dfe3ec; /* Azul claro para bordas */
-    --cor-container: #ffffff; /* Branco */
+    --cor-primaria: #273b7d;
+    /* Azul escuro */
+    --cor-secundaria: #4159a3;
+    /* Azul médio */
+    --cor-fundo: #eef1f9;
+    /* Azul claro */
+    --cor-botao: #273b7d;
+    /* Azul escuro para botões */
+    --cor-hover-botao: #4159a3;
+    /* Azul médio para hover */
+    --cor-texto-principal: #4f5d75;
+    /* Azul acinzentado */
+    --cor-titulo: #1b3b6f;
+    /* Azul mais escuro */
+    --cor-borda: #dfe3ec;
+    /* Azul claro para bordas */
+    --cor-container: #ffffff;
+    /* Branco */
 }
 
 /* Reset de estilos e configuração de base */
@@ -316,4 +325,13 @@ footer {
 
 .btn:active {
     transform: scale(0.95);
+}
+
+#sobre {
+    display: block;
+    visibility: visible;
+    padding: 2rem;
+    background-color: #fff;
+    /* Adicionando um fundo branco para visualização */
+    margin: 2rem 0;
 }
