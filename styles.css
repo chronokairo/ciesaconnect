@@ -6,18 +6,18 @@ body {
     color: #333;
     background: #f9f9f9;
     overflow-x: hidden;
-
 }
+
 header {
-    background: #005f6b;
+    background: #314898;
     color: #fff;
     padding: 1.5rem 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
 }
+
 nav {
-    background: #003f4a;
+    background: #273b7d;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -26,8 +26,8 @@ nav {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
 }
+
 nav a {
     color: #fff;
     text-decoration: none;
@@ -35,12 +35,14 @@ nav a {
     padding: 0.5rem 1rem;
     transition: background 0.3s, color 0.3s;
 }
+
 nav a:hover {
     text-decoration: underline;
-    background: #007a86;
+    background: #43146c;
     border-radius: 5px;
     color: #e0f7fa;
 }
+
 .container {
     padding: 1.5rem;
     max-width: 90%;
@@ -50,44 +52,53 @@ nav a:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in;
 }
+
 h1 {
     color: #fff;
     font-size: 2.5rem;
 }
+
 h2, h3 {
-    color: #005f6b;
+    color: #314898;
 }
+
 section {
     margin-bottom: 2rem;
 }
+
 ul {
     padding-left: 1.5rem;
 }
+
 ul li {
     margin-bottom: 0.5rem;
 }
+
 footer {
-    background: #003f4a;
+    background: #273b7d;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
     margin-top: 1rem;
 }
+
 @media (min-width: 768px) {
     .container {
         max-width: 750px;
     }
 }
+
 @media (min-width: 1024px) {
     .container {
         max-width: 1200px;
     }
 }
+
 #back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #005f6b;
+    background: #198754;
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -97,9 +108,11 @@ footer {
     display: none;
     transition: background 0.3s;
 }
+
 #back-to-top:hover {
-    background: #007a86;
+    background: #0f5132;
 }
+
 @keyframes fadeIn {
     from {
         opacity: 0;
