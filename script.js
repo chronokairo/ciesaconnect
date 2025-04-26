@@ -61,3 +61,36 @@ if (buscaBtn && buscaInput) {
         });
     });
 }
+
+async function loadPosts() {
+    const postsContainer = document.getElementById('posts-container');
+    postsContainer.innerHTML = '<p>Carregando posts...</p>';
+
+    const postFiles = ['post1.json', 'post2.json', 'post3.json']; // Lista dos arquivos JSON
+
+    try {
+        postsContainer.innerHTML = ''; // Limpa a mensagem de carregando
+
+        for (const file of postFiles) {
+            const response = await fetch(`posts/${file}`);
+            if (!response.ok) throw new Error(`Erro ao carregar o arquivo ${file}`);
+
+            const post = await response.json();
+
+            const postElement = document.createElement('div');
+            postElement.classList.add('post');
+            postElement.innerHTML = `
+                        <h2>${post.title}</h2>
+                        <p><strong>${post.date}</strong></p>
+                        <p>${post.content}</p>
+                    `;
+
+            postsContainer.appendChild(postElement);
+        }
+    } catch (error) {
+        console.error('Erro:', error.message);
+        postsContainer.innerHTML = `<p>Erro ao carregar posts. Tente novamente mais tarde.</p>`;
+    }
+}
+
+loadPosts();

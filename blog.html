@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Dinâmico</title>
+    <title>CIESA Connect</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -12,6 +13,15 @@
         <h1>Blog Dinâmico</h1>
         <p>Carregando posts dinamicamente com JavaScript</p>
     </header>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="avisos.html">Avisos</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="estagios.html">Estágios</a>
+        <a href="materiais.html">Materiais</a>
+        <a href="#sobre">Sobre</a>
+        <a href="blog.html">Blog</a>
+    </nav>
 
     <div class="container" id="posts-container">
         <p>Carregando posts...</p>
@@ -20,41 +30,7 @@
     <footer>
         &copy; 2025 Blog Dinâmico
     </footer>
-
-    <script>
-        async function loadPosts() {
-            const postsContainer = document.getElementById('posts-container');
-            postsContainer.innerHTML = '<p>Carregando posts...</p>';
-
-            const postFiles = ['post1.json', 'post2.json', 'post3.json']; // Lista dos arquivos JSON
-
-            try {
-                postsContainer.innerHTML = ''; // Limpa a mensagem de carregando
-
-                for (const file of postFiles) {
-                    const response = await fetch(`posts/${file}`);
-                    if (!response.ok) throw new Error(`Erro ao carregar o arquivo ${file}`);
-
-                    const post = await response.json();
-
-                    const postElement = document.createElement('div');
-                    postElement.classList.add('post');
-                    postElement.innerHTML = `
-                        <h2>${post.title}</h2>
-                        <p><strong>${post.date}</strong></p>
-                        <p>${post.content}</p>
-                    `;
-
-                    postsContainer.appendChild(postElement);
-                }
-            } catch (error) {
-                console.error('Erro:', error.message);
-                postsContainer.innerHTML = `<p>Erro ao carregar posts. Tente novamente mais tarde.</p>`;
-            }
-        }
-
-        loadPosts();
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
