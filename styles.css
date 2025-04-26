@@ -1,15 +1,40 @@
+/* ===== Paleta de Cores =====
+Cor Primária: #273b7d
+Cor Secundária: #4159a3
+Cor de Fundo Geral: #eef1f9
+Cor de Botões: #ff6f61    /* Alteração para um tom mais laranja */
+/*Cor de Hover nos Botões: #e75f4b
+
+/* Alteração para tom mais escuro */
+/*Cor do Texto Principal: #4f5d75 Cor dos Títulos: #1b3b6f Cor de Bordas: #dfe3ec Cor do Container: #ffffff */
+:root {
+    --cor-primaria: #273b7d;
+    --cor-secundaria: #4159a3;
+    --cor-fundo: #eef1f9;
+    --cor-botao: #ff6f61;
+    /* Alteração para laranja */
+    --cor-hover-botao: #e75f4b;
+
+    /* Alteração para tom mais escuro de laranja */
+    --cor-texto-principal: #4f5d75;
+    --cor-titulo: #1b3b6f;
+    --cor-borda: #dfe3ec;
+    --cor-container: #ffffff;
+}
+
+/* Reset de estilos e configuração de base */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
-    background: #f9f9f9;
+    color: var(--cor-texto-principal);
+    background: var(--cor-fundo);
     overflow-x: hidden;
 }
 
 header {
-    background: #314898;
+    background: var(--cor-primaria);
     color: #fff;
     padding: 1.5rem 0;
     text-align: center;
@@ -17,7 +42,7 @@ header {
 }
 
 nav {
-    background: #273b7d;
+    background: var(--cor-primaria);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -38,21 +63,23 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
-    background: #43146c;
+    background: var(--cor-secundaria);
     border-radius: 5px;
-    color: #e0f7fa;
+    color: #ffffff;
 }
 
+/* Contêiner principal */
 .container {
     padding: 1.5rem;
     max-width: 90%;
     margin: auto;
-    background: #fff;
+    background: var(--cor-container);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in;
 }
 
+/* Títulos principais */
 h1 {
     color: #fff;
     font-size: 2.5rem;
@@ -60,9 +87,10 @@ h1 {
 
 h2,
 h3 {
-    color: #314898;
+    color: var(--cor-titulo);
 }
 
+/* Layout geral e espaçamento */
 section {
     margin-bottom: 2rem;
 }
@@ -75,14 +103,16 @@ ul li {
     margin-bottom: 0.5rem;
 }
 
+/* Rodapé */
 footer {
-    background: #273b7d;
+    background: var(--cor-titulo);
     color: #fff;
     text-align: center;
     padding: 1rem 0;
     margin-top: 1rem;
 }
 
+/* Responsividade */
 @media (min-width: 768px) {
     .container {
         max-width: 750px;
@@ -95,13 +125,12 @@ footer {
     }
 }
 
-/* Botão Voltar ao Topo */
+/* Botão "Voltar ao topo" */
 #back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #40c057;
-    /* Verde claro */
+    background: var(--cor-botao);
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -113,10 +142,10 @@ footer {
 }
 
 #back-to-top:hover {
-    background: #2f9e44;
+    background: var(--cor-hover-botao);
 }
 
-/* Animação */
+/* Animação de Fade In */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -129,7 +158,7 @@ footer {
     }
 }
 
-/* Filtros e Busca (Eventos e Avisos) */
+/* Filtros e busca (Eventos e Avisos) */
 .filtros {
     display: flex;
     flex-wrap: wrap;
@@ -138,7 +167,7 @@ footer {
 }
 
 .filtro-btn {
-    background: #40c057;
+    background: var(--cor-botao);
     color: white;
     border: none;
     padding: 8px 15px;
@@ -149,7 +178,7 @@ footer {
 
 .filtro-btn:hover,
 .filtro-btn.ativo {
-    background: #2f9e44;
+    background: var(--cor-hover-botao);
     font-weight: bold;
 }
 
@@ -161,28 +190,32 @@ footer {
 .busca input {
     padding: 8px;
     flex: 1;
-    border: 1px solid #ddd;
+    border: 1px solid var(--cor-borda);
     border-radius: 5px 0 0 5px;
 }
 
 .busca button {
     padding: 8px 15px;
-    background: #005f6b;
+    background: var(--cor-botao);
     color: white;
     border: none;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
 
-/* Eventos e Avisos */
+.busca button:hover {
+    background: var(--cor-hover-botao);
+}
+
+/* Estilo de Eventos e Avisos */
 .evento,
 .aviso {
-    background: #f9f9f9;
-    border-left: 4px solid #005f6b;
+    background: var(--cor-container);
+    border-left: 4px solid var(--cor-botao);
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 0 5px 5px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .evento-data,
@@ -194,15 +227,15 @@ footer {
 .evento-titulo,
 .aviso-titulo {
     margin: 5px 0;
-    color: #005f6b;
+    color: var(--cor-titulo);
 }
 
 .evento-tipo,
 .aviso-tipo {
     display: inline-block;
     padding: 3px 8px;
-    background: #e0f7fa;
-    color: #005f6b;
+    background: var(--cor-borda);
+    color: var(--cor-primaria);
     border-radius: 3px;
     font-size: 0.8rem;
     margin-right: 5px;
@@ -225,7 +258,7 @@ footer {
 /* Comentários */
 .comentarios {
     margin-top: 10px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--cor-borda);
     padding-top: 10px;
 }
 
@@ -236,18 +269,22 @@ footer {
 .comentario-form textarea {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--cor-borda);
     border-radius: 5px;
     margin-bottom: 5px;
 }
 
 .comentario-form button {
-    background: #005f6b;
+    background: var(--cor-botao);
     color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 3px;
     cursor: pointer;
+}
+
+.comentario-form button:hover {
+    background: var(--cor-hover-botao);
 }
 
 /* Paginação */
@@ -258,15 +295,16 @@ footer {
 }
 
 .paginacao button {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
+    background: var(--cor-container);
+    border: 1px solid var(--cor-borda);
     padding: 5px 10px;
     margin: 0 5px;
     cursor: pointer;
+    color: var(--cor-primaria);
 }
 
 .paginacao button.atual {
-    background: #005f6b;
+    background: var(--cor-botao);
     color: white;
-    border-color: #005f6b;
+    border-color: var(--cor-botao);
 }
