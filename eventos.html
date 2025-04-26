@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos Acadêmicos - CIESA Connect</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <h1>CIESA Connect</h1>
@@ -18,17 +20,18 @@
         <a href="estagios.html">Estágios</a>
         <a href="materiais.html">Materiais</a>
         <a href="#sobre">Sobre</a>
+        <a href="blog.html">Blog</a>
     </nav>
 
     <div class="container">
         <h2>Eventos Acadêmicos</h2>
-        
+
         <!-- Barra de busca -->
         <div class="busca">
             <input type="text" id="busca-input" placeholder="Buscar eventos...">
             <button id="busca-btn">Buscar</button>
         </div>
-        
+
         <!-- Filtros -->
         <div class="filtros">
             <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
@@ -38,7 +41,7 @@
             <button class="filtro-btn" data-filtro="administracao">Administração</button>
             <button class="filtro-btn" data-filtro="direito">Direito</button>
         </div>
-        
+
         <!-- Lista de eventos -->
         <div class="eventos-container" id="eventos-lista">
             <!-- Evento interno -->
@@ -50,7 +53,8 @@
                 <div class="evento-local">Local: Laboratório 5, Bloco A</div>
                 <div class="evento-horario">Data: 10/05/2025 - 14h às 18h</div>
                 <div class="evento-descricao">
-                    <p>Workshop prático de Desenvolvimento Web com foco em HTML, CSS e JavaScript. Serão abordadas técnicas modernas de desenvolvimento front-end, com demonstrações práticas e exercícios.</p>
+                    <p>Workshop prático de Desenvolvimento Web com foco em HTML, CSS e JavaScript. Serão abordadas
+                        técnicas modernas de desenvolvimento front-end, com demonstrações práticas e exercícios.</p>
                     <p>Vagas limitadas. Inscrições pelo site ou na coordenação do curso.</p>
                 </div>
                 <div class="comentarios">
@@ -59,7 +63,8 @@
                         <p><strong>Juliana Martins:</strong> Precisa levar notebook?</p>
                     </div>
                     <div class="comentario">
-                        <p><strong>Prof. Rodrigo:</strong> Sim, Juliana. É recomendado trazer seu notebook para acompanhar os exercícios práticos.</p>
+                        <p><strong>Prof. Rodrigo:</strong> Sim, Juliana. É recomendado trazer seu notebook para
+                            acompanhar os exercícios práticos.</p>
                     </div>
                     <div class="comentario-form">
                         <textarea placeholder="Deixe seu comentário..."></textarea>
@@ -67,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Evento externo -->
             <div class="evento" data-tipo="externo" data-categoria="tecnologia">
                 <div class="evento-data">Publicado em: 25/04/2025</div>
@@ -77,8 +82,11 @@
                 <div class="evento-local">Local: Centro de Convenções Vasco Vasques</div>
                 <div class="evento-horario">Data: 15-17/05/2025 - 9h às 18h</div>
                 <div class="evento-descricao">
-                    <p>A maior conferência de tecnologia da região Norte. Palestras, workshops e networking com profissionais da área de tecnologia. Temas como IA, Desenvolvimento de Software, Cloud Computing e muito mais.</p>
-                    <p>Alunos do CIESA têm 50% de desconto na inscrição mediante apresentação da carteira estudantil.</p>
+                    <p>A maior conferência de tecnologia da região Norte. Palestras, workshops e networking com
+                        profissionais da área de tecnologia. Temas como IA, Desenvolvimento de Software, Cloud Computing
+                        e muito mais.</p>
+                    <p>Alunos do CIESA têm 50% de desconto na inscrição mediante apresentação da carteira estudantil.
+                    </p>
                 </div>
                 <div class="comentarios">
                     <h4>Comentários (1)</h4>
@@ -91,7 +99,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Evento interno administrativo -->
             <div class="evento" data-tipo="interno" data-categoria="administracao">
                 <div class="evento-data">Publicado em: 24/04/2025</div>
@@ -101,7 +109,8 @@
                 <div class="evento-local">Local: Auditório Principal</div>
                 <div class="evento-horario">Data: 08/05/2025 - 19h</div>
                 <div class="evento-descricao">
-                    <p>Palestra com o empresário João Silva, fundador da startup XYZ, que compartilhará sua experiência empreendedora e dará dicas sobre como iniciar um negócio digital.</p>
+                    <p>Palestra com o empresário João Silva, fundador da startup XYZ, que compartilhará sua experiência
+                        empreendedora e dará dicas sobre como iniciar um negócio digital.</p>
                     <p>Evento gratuito e aberto a todos os alunos. Certificado de horas complementares disponível.</p>
                 </div>
                 <div class="comentarios">
@@ -113,7 +122,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Paginação -->
         <div class="paginacao">
             <button>Anterior</button>
@@ -128,22 +137,22 @@
         <button id="back-to-top">&#8593;</button>
         &copy; 2025 - CIESA Connect | Centro Universitário de Ensino Superior do Amazonas
     </footer>
-    
+
     <script>
         // Implementação da funcionalidade de filtros
         document.querySelectorAll('.filtro-btn').forEach(botao => {
-            botao.addEventListener('click', function() {
+            botao.addEventListener('click', function () {
                 // Remove a classe ativo de todos os botões
                 document.querySelectorAll('.filtro-btn').forEach(btn => {
                     btn.classList.remove('ativo');
                 });
-                
+
                 // Adiciona a classe ativo ao botão clicado
                 this.classList.add('ativo');
-                
+
                 // Obtém o tipo de filtro
                 const filtro = this.getAttribute('data-filtro');
-                
+
                 // Filtra os eventos
                 document.querySelectorAll('.evento').forEach(evento => {
                     if (filtro === 'todos') {
@@ -164,16 +173,16 @@
                 });
             });
         });
-        
+
         // Implementação da busca
-        document.getElementById('busca-btn').addEventListener('click', function() {
+        document.getElementById('busca-btn').addEventListener('click', function () {
             const termoBusca = document.getElementById('busca-input').value.toLowerCase();
-            
+
             document.querySelectorAll('.evento').forEach(evento => {
                 const titulo = evento.querySelector('.evento-titulo').textContent.toLowerCase();
                 const descricao = evento.querySelector('.evento-descricao').textContent.toLowerCase();
                 const local = evento.querySelector('.evento-local').textContent.toLowerCase();
-                
+
                 if (titulo.includes(termoBusca) || descricao.includes(termoBusca) || local.includes(termoBusca)) {
                     evento.style.display = 'block';
                 } else {
@@ -197,4 +206,5 @@
         });
     </script>
 </body>
+
 </html>

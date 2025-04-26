@@ -58,7 +58,8 @@ h1 {
     font-size: 2.5rem;
 }
 
-h2, h3 {
+h2,
+h3 {
     color: #314898;
 }
 
@@ -94,11 +95,13 @@ footer {
     }
 }
 
+/* Botão Voltar ao Topo */
 #back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #198754;
+    background: #40c057;
+    /* Verde claro */
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -110,50 +113,58 @@ footer {
 }
 
 #back-to-top:hover {
-    background: #0f5132;
+    background: #2f9e44;
 }
 
+/* Animação */
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-/* Estilos específicos para a página de eventos */
+
+/* Filtros e Busca (Eventos e Avisos) */
 .filtros {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
 }
+
 .filtro-btn {
-    background: #198754;
+    background: #40c057;
     color: white;
     border: none;
     padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s;
 }
-.filtro-btn:hover {
-    background: #007a86;
-}
+
+.filtro-btn:hover,
 .filtro-btn.ativo {
-    background: #007a86;
+    background: #2f9e44;
     font-weight: bold;
 }
+
 .busca {
     margin-bottom: 20px;
+    display: flex;
 }
+
 .busca input {
     padding: 8px;
-    width: 80%;
+    flex: 1;
     border: 1px solid #ddd;
     border-radius: 5px 0 0 5px;
 }
+
 .busca button {
     padding: 8px 15px;
     background: #005f6b;
@@ -162,120 +173,9 @@ footer {
     border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
-.evento {
-    background: #f9f9f9;
-    border-left: 4px solid #005f6b;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 0 5px 5px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.evento-data {
-    color: #666;
-    font-size: 0.9rem;
-}
-.evento-titulo {
-    margin: 5px 0;
-    color: #005f6b;
-}
-.evento-tipo {
-    display: inline-block;
-    padding: 3px 8px;
-    background: #e0f7fa;
-    color: #005f6b;
-    border-radius: 3px;
-    font-size: 0.8rem;
-    margin-right: 5px;
-}
-.evento-local {
-    font-weight: bold;
-    margin: 5px 0;
-}
-.evento-horario {
-    margin-bottom: 10px;
-}
-.evento-descricao {
-    margin-top: 10px;
-}
-.comentarios {
-    margin-top: 10px;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
-}
-.comentario-form {
-    margin-top: 10px;
-}
-.comentario-form textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-.comentario-form button {
-    background: #005f6b;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-.paginacao {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-.paginacao button {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 5px 10px;
-    margin: 0 5px;
-    cursor: pointer;
-}
-.paginacao button.atual {
-    background: #005f6b;
-    color: white;
-    border-color: #005f6b;
-}
-/* Estilos específicos para a página de avisos */
-.filtros {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-.filtro-btn {
-    background: #005f6b;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.filtro-btn:hover {
-    background: #007a86;
-}
-.filtro-btn.ativo {
-    background: #007a86;
-    font-weight: bold;
-}
-.busca {
-    margin-bottom: 20px;
-}
-.busca input {
-    padding: 8px;
-    width: 80%;
-    border: 1px solid #ddd;
-    border-radius: 5px 0 0 5px;
-}
-.busca button {
-    padding: 8px 15px;
-    background: #005f6b;
-    color: white;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-}
+
+/* Eventos e Avisos */
+.evento,
 .aviso {
     background: #f9f9f9;
     border-left: 4px solid #005f6b;
@@ -284,14 +184,20 @@ footer {
     border-radius: 0 5px 5px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.evento-data,
 .aviso-data {
     color: #666;
     font-size: 0.9rem;
 }
+
+.evento-titulo,
 .aviso-titulo {
     margin: 5px 0;
     color: #005f6b;
 }
+
+.evento-tipo,
 .aviso-tipo {
     display: inline-block;
     padding: 3px 8px;
@@ -301,17 +207,32 @@ footer {
     font-size: 0.8rem;
     margin-right: 5px;
 }
+
+.evento-local {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.evento-horario {
+    margin-bottom: 10px;
+}
+
+.evento-descricao,
 .aviso-conteudo {
     margin-top: 10px;
 }
+
+/* Comentários */
 .comentarios {
     margin-top: 10px;
     border-top: 1px solid #eee;
     padding-top: 10px;
 }
+
 .comentario-form {
     margin-top: 10px;
 }
+
 .comentario-form textarea {
     width: 100%;
     padding: 8px;
@@ -319,6 +240,7 @@ footer {
     border-radius: 5px;
     margin-bottom: 5px;
 }
+
 .comentario-form button {
     background: #005f6b;
     color: white;
@@ -327,11 +249,14 @@ footer {
     border-radius: 3px;
     cursor: pointer;
 }
+
+/* Paginação */
 .paginacao {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
+
 .paginacao button {
     background: #f9f9f9;
     border: 1px solid #ddd;
@@ -339,6 +264,7 @@ footer {
     margin: 0 5px;
     cursor: pointer;
 }
+
 .paginacao button.atual {
     background: #005f6b;
     color: white;
