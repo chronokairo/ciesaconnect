@@ -1,4 +1,4 @@
-/* ===== Paleta de Cores ===== */
+/* ===== Paleta de Cores (Mantida) ===== */
 :root {
     --cor-primaria: #273b7d;
     /* Azul escuro */
@@ -18,33 +18,50 @@
     /* Azul claro para bordas */
     --cor-container: #ffffff;
     /* Branco */
+    --cor-foco-outline: #76a9fa; /* Azul claro para outline de foco */
 }
 
-/* Reset de estilos e configuração de base */
+/* ===== Reset e Base ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Melhora o controle de padding/border */
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* Stack de fontes mais moderno */
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: var(--cor-texto-principal);
-    background: var(--cor-fundo);
+    background-color: var(--cor-fundo);
     overflow-x: hidden;
 }
 
+/* ===== Cabeçalho ===== */
 header {
-    background: var(--cor-primaria);
+    background-color: var(--cor-primaria);
     color: #fff;
-    padding: 1.5rem 0;
+    padding: 1rem 0; /* Ajuste no padding */
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.logo-container img {
+    display: block; /* Evita espaço extra abaixo da imagem */
+    margin: 0 auto; /* Centraliza se o container for maior */
+    max-width: 100%;
+    height: auto;
+}
+/* .logo {} - Removido por parecer redundante */
+
+/* ===== Navegação ===== */
 nav {
-    background: var(--cor-primaria);
+    background-color: var(--cor-primaria);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem; /* Adicionado padding horizontal */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -54,109 +71,144 @@ nav {
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 1rem;
+    margin: 0.25rem 0.75rem; /* Ajuste na margem */
     padding: 0.5rem 1rem;
-    transition: background 0.3s, color 0.3s;
+    border-radius: 5px; /* Adicionado border-radius base */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.2s;
+    white-space: nowrap; /* Evita quebra de linha nos links */
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
     text-decoration: underline;
-    background: var(--cor-secundaria);
-    border-radius: 5px;
+    background-color: var(--cor-secundaria);
     color: #ffffff;
+    outline: none; /* Remove outline padrão */
+    box-shadow: 0 0 0 2px var(--cor-foco-outline); /* Adiciona outline de foco customizado */
 }
 
-/* Contêiner principal */
+nav a.active {
+    background-color: var(--cor-secundaria);
+    font-weight: bold;
+    text-decoration: none; /* Remove sublinhado do link ativo */
+}
+
+/* ===== Contêiner Principal ===== */
 .container {
     padding: 1.5rem;
-    max-width: 90%;
-    margin: auto;
-    background: var(--cor-container);
+    max-width: 1200px; /* Aumentado max-width para desktops maiores */
+    margin: 1.5rem auto; /* Adicionado margem vertical */
+    background-color: var(--cor-container);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in;
+    /* Animação movida para o JS para melhor controle */
 }
 
-/* Títulos principais */
-h1 {
-    color: #fff;
-    font-size: 2.5rem;
-}
-
-h2,
-h3 {
+/* ===== Tipografia e Layout Geral ===== */
+h1, h2, h3, h4, h5, h6 {
     color: var(--cor-titulo);
+    margin-top: 1.5em; /* Espaçamento antes dos títulos */
+    margin-bottom: 0.75em;
 }
 
-/* Layout geral e espaçamento */
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
 section {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem; /* Aumentado espaçamento entre seções */
+    padding-top: 1rem; /* Adicionado padding para links de âncora */
 }
 
 ul {
     padding-left: 1.5rem;
+    list-style: disc; /* Garante estilo de lista padrão */
 }
 
 ul li {
     margin-bottom: 0.5rem;
 }
 
-/* Rodapé */
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.2s, text-decoration 0.2s;
+}
+
+a:hover,
+a:focus {
+    color: var(--cor-secundaria);
+    text-decoration: underline;
+    outline: none; /* Remove outline padrão */
+}
+
+a:focus {
+     box-shadow: 0 0 0 2px var(--cor-foco-outline); /* Adiciona outline de foco customizado */
+     border-radius: 2px;
+}
+
+/* ===== Rodapé ===== */
 footer {
-    background: var(--cor-titulo);
+    background-color: var(--cor-titulo);
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
-    margin-top: 1rem;
+    padding: 1.5rem 1rem; /* Aumentado padding */
+    margin-top: 2rem;
 }
 
-/* Responsividade */
-@media (min-width: 768px) {
-    .container {
-        max-width: 750px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .container {
-        max-width: 1200px;
-    }
-}
-
-/* Botão "Voltar ao topo" */
+/* ===== Botão "Voltar ao topo" ===== */
 #back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: var(--cor-botao);
+    background-color: var(--cor-botao);
     color: #fff;
     border: none;
     border-radius: 50%;
-    padding: 10px 15px;
+    width: 40px; /* Tamanho fixo */
+    height: 40px; /* Tamanho fixo */
+    font-size: 1.2rem;
+    line-height: 40px; /* Centraliza o ícone */
+    text-align: center;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: none;
-    transition: background 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Controlado pelo JS */
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-#back-to-top:hover {
-    background: var(--cor-hover-botao);
+#back-to-top:hover,
+#back-to-top:focus {
+    background-color: var(--cor-hover-botao);
+    transform: scale(1.1);
+    outline: none;
 }
 
-/* Animação de Fade In */
+/* ===== Animação de Fade In (Controlada pelo JS) ===== */
+/* A classe .fade-in pode ser adicionada pelo JS se necessário, mas a animação direta no elemento é mais simples */
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Filtros e busca (Eventos e Avisos) */
+/* ===== Componentes: Filtros e Busca ===== */
 .filtros {
     display: flex;
     flex-wrap: wrap;
@@ -165,19 +217,13 @@ footer {
 }
 
 .filtro-btn {
-    background: var(--cor-botao);
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+    /* Usa a classe .btn */
 }
 
-.filtro-btn:hover,
 .filtro-btn.ativo {
-    background: var(--cor-hover-botao);
+    background-color: var(--cor-hover-botao);
     font-weight: bold;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); /* Efeito de botão pressionado */
 }
 
 .busca {
@@ -185,153 +231,290 @@ footer {
     display: flex;
 }
 
-.busca input {
-    padding: 8px;
-    flex: 1;
+.busca input[type="text"] {
+    padding: 10px;
+    flex-grow: 1; /* Ocupa espaço disponível */
     border: 1px solid var(--cor-borda);
     border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.busca input[type="text"]:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 0 2px var(--cor-foco-outline);
 }
 
 .busca button {
-    padding: 8px 15px;
-    background: var(--cor-botao);
-    color: white;
-    border: none;
+    /* Usa a classe .btn */
     border-radius: 0 5px 5px 0;
-    cursor: pointer;
+    flex-shrink: 0; /* Não encolhe */
 }
 
-.busca button:hover {
-    background: var(--cor-hover-botao);
-}
-
-/* Estilo de Eventos e Avisos */
-.evento,
-.aviso {
-    background: var(--cor-container);
-    border-left: 4px solid var(--cor-botao);
-    padding: 15px;
-    margin-bottom: 20px;
+/* ===== Componentes: Itens de Lista (Avisos/Eventos) ===== */
+.list-item /* Classe comum para .aviso e .evento */
+{
+    background-color: var(--cor-container);
+    border-left: 5px solid var(--cor-botao);
+    padding: 1rem 1.5rem; /* Ajuste no padding */
+    margin-bottom: 1.5rem;
     border-radius: 0 5px 5px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.2s;
 }
 
-.evento-data,
-.aviso-data {
+.list-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.aviso-data,
+.evento-data {
     color: #666;
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
 
-.evento-titulo,
-.aviso-titulo {
-    margin: 5px 0;
+.aviso-titulo,
+.evento-titulo {
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
     color: var(--cor-titulo);
 }
 
-.evento-tipo,
-.aviso-tipo {
+.tipo-tag /* Classe comum para .aviso-tipo, .evento-tipo, .evento-categoria */
+{
     display: inline-block;
     padding: 3px 8px;
-    background: var(--cor-borda);
+    background-color: var(--cor-borda);
     color: var(--cor-primaria);
     border-radius: 3px;
     font-size: 0.8rem;
     margin-right: 5px;
+    margin-bottom: 5px; /* Espaçamento se houver múltiplas tags */
+    font-weight: 500;
+}
+
+.evento-local,
+.evento-horario {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: var(--cor-texto-principal);
 }
 
 .evento-local {
     font-weight: bold;
-    margin: 5px 0;
 }
 
-.evento-horario {
-    margin-bottom: 10px;
+.aviso-conteudo,
+.evento-descricao {
+    margin-top: 1rem;
 }
 
-.evento-descricao,
-.aviso-conteudo {
-    margin-top: 10px;
-}
-
-/* Comentários */
+/* ===== Componentes: Comentários ===== */
 .comentarios {
-    margin-top: 10px;
+    margin-top: 1.5rem;
     border-top: 1px solid var(--cor-borda);
-    padding-top: 10px;
+    padding-top: 1rem;
+}
+
+.comentarios h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.comment-list .comentario {
+    background-color: var(--cor-fundo);
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.comment-list .comentario p {
+    margin: 0;
 }
 
 .comentario-form {
-    margin-top: 10px;
+    margin-top: 1rem;
 }
 
 .comentario-form textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid var(--cor-borda);
     border-radius: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    min-height: 80px; /* Altura mínima */
+    resize: vertical; /* Permite redimensionar verticalmente */
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.comentario-form button {
-    background: var(--cor-botao);
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
+.comentario-form textarea:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 0 2px var(--cor-foco-outline);
 }
 
-.comentario-form button:hover {
-    background: var(--cor-hover-botao);
+.btn-comment {
+     /* Usa a classe .btn */
 }
 
-/* Paginação */
+/* ===== Componentes: Paginação ===== */
 .paginacao {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 2rem;
 }
 
-.paginacao button {
-    background: var(--cor-container);
+.btn-page {
+    /* Usa a classe .btn mas com estilo mais leve */
+    background-color: var(--cor-container);
     border: 1px solid var(--cor-borda);
-    padding: 5px 10px;
-    margin: 0 5px;
-    cursor: pointer;
     color: var(--cor-primaria);
+    padding: 5px 12px;
+    min-width: 35px; /* Largura mínima */
+    text-align: center;
 }
 
-.paginacao button.atual {
-    background: var(--cor-botao);
+.btn-page:hover,
+.btn-page:focus {
+    background-color: var(--cor-borda);
+    border-color: var(--cor-secundaria);
+    color: var(--cor-titulo);
+    transform: none; /* Remove scale do .btn genérico */
+    box-shadow: 0 0 0 2px var(--cor-foco-outline);
+}
+
+.btn-page.atual {
+    background-color: var(--cor-botao);
     color: white;
     border-color: var(--cor-botao);
+    font-weight: bold;
 }
 
-/* Estilo genérico para botões */
-.btn {
-    background: var(--cor-botao);
+.btn-page:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--cor-borda);
+    border-color: var(--cor-borda);
+    color: var(--cor-texto-principal);
+}
+
+.btn-page:disabled:hover {
+     box-shadow: none;
+}
+
+/* ===== Componentes: Botão Genérico ===== */
+.btn,
+.filtro-btn,
+.busca button,
+.btn-comment,
+.btn-page /* Aplica estilos base a todos os botões */
+{
+    display: inline-block;
+    background-color: var(--cor-botao);
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 10px 18px; /* Padding padrão */
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 
-.btn:hover {
-    background: var(--cor-hover-botao);
-    transform: scale(1.05);
+.btn:hover,
+.filtro-btn:hover,
+.busca button:hover,
+.btn-comment:hover {
+    background-color: var(--cor-hover-botao);
+    transform: translateY(-2px); /* Leve elevação no hover */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.btn:active {
-    transform: scale(0.95);
+.btn:active,
+.filtro-btn:active,
+.busca button:active,
+.btn-comment:active {
+    transform: translateY(0); /* Volta ao normal no clique */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
 
-#sobre {
-    display: block;
-    visibility: visible;
-    padding: 2rem;
-    background-color: #fff;
-    /* Adicionando um fundo branco para visualização */
-    margin: 2rem 0;
+.btn:focus,
+.filtro-btn:focus,
+.busca button:focus,
+.btn-comment:focus,
+.btn-page:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--cor-foco-outline); /* Outline de foco mais visível */
 }
+
+/* ===== Blog: Embeds e Social Media ===== */
+.instagram-embed-container {
+    margin-bottom: 2rem;
+}
+
+.instagram-embed-container h3 {
+    text-align: center;
+}
+
+.social-media a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    /* Adicionar ícones seria uma boa melhoria visual */
+}
+
+/* ===== Responsividade Adicional ===== */
+@media (max-width: 767px) {
+    nav {
+        padding: 0.5rem;
+    }
+    nav a {
+        margin: 0.25rem 0.5rem;
+        padding: 0.4rem 0.8rem;
+    }
+    .container {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
+
+    .busca {
+        flex-direction: column;
+    }
+    .busca input[type="text"] {
+        border-radius: 5px 5px 0 0;
+        margin-bottom: -1px; /* Corrige borda dupla */
+    }
+    .busca button {
+        border-radius: 0 0 5px 5px;
+        width: 100%;
+    }
+    .paginacao {
+        gap: 5px;
+    }
+    .btn-page {
+        padding: 4px 8px;
+        min-width: 30px;
+    }
+}
+
+/* ===== REMOVIDO: Estilo #sobre específico ===== */
+/* O espaçamento agora é controlado pela margem/padding da seção */
+.sobre-projeto {
+    /* Adicionar estilos específicos se necessário, ex: */
+    /* background-color: #f8f9fa; */
+    /* padding: 2rem; */
+}
+

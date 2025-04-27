@@ -4,18 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIESA Connect</title>
+    <title>Blog - CIESA Connect</title> <!-- Título atualizado -->
     <link rel="stylesheet" href="styles.css">
 </head>
-
 
 <body>
     <header>
         <div class="logo-container">
-            <img class="img-fluid" src="images/CIESAConnect.png" alt="Ciesa" width="300">
+            <!-- Certifique-se que a imagem /images/CIESAConnect.png existe -->
+            <img class="img-fluid" src="images/CIESAConnect.png" alt="Ciesa Logo" width="300">
             <div class="logo"></div>
         </div>
     </header>
+
     <nav>
         <a href="index.html">Início</a>
         <a href="avisos.html">Avisos</a>
@@ -23,31 +24,51 @@
         <a href="estagios.html">Estágios</a>
         <a href="materiais.html">Materiais</a>
         <a href="index.html#sobre">Sobre</a>
-        <a href="blog.html">Blog</a>
+        <a href="blog.html" class="active">Blog</a> <!-- Classe active adicionada -->
     </nav>
-    <div class="container" id="posts-container">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/profajanainasouza"
-            data-instgrm-version="14" style="width:100%; max-width:540px; margin:auto;">
-        </blockquote>
-    </div>
-    <div class="container" id="posts-container">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/ciesamanaus"
-            data-instgrm-version="14" style="width:100%; max-width:540px; margin:auto;">
-        </blockquote>
-    </div>
-    <p>Para mais informações, siga nossas redes sociais:</p>
-    <div class="social-media">
-        <a href="https://www.instagram.com/umtaldemike" target="_blank">Riad Rabelo Makarem</a><br>
-        <a href="https://www.instagram.com/makaremriad" target="_blank">Luan Nery</a><br>
-        <a href="https://www.instagram.com/lu4nn3ry" target="_blank">Mike</a><br>
 
-        <footer>
-            &copy; 2025 Blog Dinâmico
-        </footer>
+    <div class="container">
+        <h2>Blog e Redes Sociais</h2>
 
-        <script async src="//www.instagram.com/embed.js"></script>
+        <p>Acompanhe as novidades e conteúdos compartilhados pela comunidade CIESA:</p>
 
-        <script src="script.js"></script>
+        <!-- Container para embeds do Instagram -->
+        <div class="instagram-embed-container">
+            <h3>Professora Janaína Souza</h3>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/profajanainasouza"
+                data-instgrm-version="14" style="width:100%; max-width:540px; margin: 20px auto;">
+            </blockquote>
+        </div>
+
+        <div class="instagram-embed-container">
+            <h3>CIESA Manaus</h3>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/ciesamanaus"
+                data-instgrm-version="14" style="width:100%; max-width:540px; margin: 20px auto;">
+            </blockquote>
+        </div>
+
+        <section id="desenvolvedores">
+            <h3>Desenvolvedores do Projeto</h3>
+            <p>Conecte-se com a equipe que desenvolveu o CIESA Connect:</p>
+            <div class="social-media">
+                <a href="https://www.instagram.com/umtaldemike" target="_blank">Mike</a><br>
+                <a href="https://www.instagram.com/makaremriad" target="_blank">Riad Rabelo Makarem</a><br>
+                <a href="https://www.instagram.com/lu4nn3ry" target="_blank">Luan Nery</a><br>
+                <!-- Adicionar outros desenvolvedores se necessário -->
+            </div>
+        </section>
+
+    </div> <!-- Fim do .container principal -->
+
+    <footer>
+        <button id="back-to-top">&#8593;</button>
+        &copy; 2025 - CIESA Connect | Centro Universitário de Ensino Superior do Amazonas
+    </footer>
+
+    <!-- Script do Instagram Embed -->
+    <script async src="//www.instagram.com/embed.js"></script>
+    <!-- Script principal do site -->
+    <script src="script.js"></script>
 </body>
 
 </html>

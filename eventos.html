@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos Acadêmicos - CIESA Connect</title>
+    <title>Eventos - CIESA Connect</title> <!-- Título atualizado -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
         <div class="logo-container">
-            <img class="img-fluid" src="images/CIESAConnect.png" alt="Ciesa" width="300">
+            <!-- Certifique-se que a imagem /images/CIESAConnect.png existe -->
+            <img class="img-fluid" src="images/CIESAConnect.png" alt="Ciesa Logo" width="300">
             <div class="logo"></div>
         </div>
     </header>
@@ -19,7 +20,7 @@
     <nav>
         <a href="index.html">Início</a>
         <a href="avisos.html">Avisos</a>
-        <a href="eventos.html">Eventos</a>
+        <a href="eventos.html" class="active">Eventos</a> <!-- Classe active adicionada -->
         <a href="estagios.html">Estágios</a>
         <a href="materiais.html">Materiais</a>
         <a href="index.html#sobre">Sobre</a>
@@ -31,27 +32,29 @@
 
         <!-- Barra de busca -->
         <div class="busca">
-            <input type="text" id="busca-input" placeholder="Buscar eventos...">
-            <button id="busca-btn">Buscar</button>
+            <input type="text" id="busca-input" placeholder="Buscar eventos..." aria-label="Buscar eventos">
+            <button id="busca-btn" class="btn">Buscar</button>
         </div>
 
         <!-- Filtros -->
-        <div class="filtros">
-            <button class="btn filtro-btn ativo" data-filtro="todos">Todos</button>
+        <div class="filtros" role="group" aria-label="Filtrar eventos por tipo ou categoria">
+            <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
             <button class="filtro-btn" data-filtro="interno">CIESA</button>
             <button class="filtro-btn" data-filtro="externo">Externos</button>
             <button class="filtro-btn" data-filtro="tecnologia">Tecnologia</button>
             <button class="filtro-btn" data-filtro="administracao">Administração</button>
             <button class="filtro-btn" data-filtro="direito">Direito</button>
+            <!-- Adicionar mais categorias se necessário -->
         </div>
 
         <!-- Lista de eventos -->
-        <div class="eventos-container" id="eventos-lista">
+        <div class="eventos-container list-container" id="eventos-lista">
+            <!-- Os eventos serão carregados aqui (ou podem ser mantidos como exemplos estáticos) -->
             <!-- Evento interno -->
-            <div class="evento" data-tipo="interno" data-categoria="tecnologia">
+            <div class="evento list-item" data-tipo="interno" data-categoria="tecnologia">
                 <div class="evento-data">Publicado em: 26/04/2025</div>
-                <span class="evento-tipo">CIESA</span>
-                <span class="evento-tipo">Tecnologia</span>
+                <span class="evento-tipo tipo-tag">CIESA</span>
+                <span class="evento-categoria tipo-tag">Tecnologia</span> <!-- Classe adicionada para consistência -->
                 <h3 class="evento-titulo">Workshop de Desenvolvimento Web</h3>
                 <div class="evento-local">Local: Laboratório 5, Bloco A</div>
                 <div class="evento-horario">Data: 10/05/2025 - 14h às 18h</div>
@@ -61,26 +64,28 @@
                     <p>Vagas limitadas. Inscrições pelo site ou na coordenação do curso.</p>
                 </div>
                 <div class="comentarios">
-                    <h4>Comentários (2)</h4>
-                    <div class="comentario">
-                        <p><strong>Juliana Martins:</strong> Precisa levar notebook?</p>
-                    </div>
-                    <div class="comentario">
-                        <p><strong>Prof. Rodrigo:</strong> Sim, Juliana. É recomendado trazer seu notebook para
-                            acompanhar os exercícios práticos.</p>
+                    <h4>Comentários (<span class="comment-count">2</span>)</h4>
+                    <div class="comment-list">
+                        <div class="comentario">
+                            <p><strong>Juliana Martins:</strong> Precisa levar notebook?</p>
+                        </div>
+                        <div class="comentario">
+                            <p><strong>Prof. Rodrigo:</strong> Sim, Juliana. É recomendado trazer seu notebook para
+                                acompanhar os exercícios práticos.</p>
+                        </div>
                     </div>
                     <div class="comentario-form">
-                        <textarea placeholder="Deixe seu comentário..."></textarea>
-                        <button>Comentar</button>
+                        <textarea placeholder="Deixe seu comentário..." aria-label="Campo para novo comentário"></textarea>
+                        <button class="btn-comment">Comentar</button>
                     </div>
                 </div>
             </div>
 
             <!-- Evento externo -->
-            <div class="evento" data-tipo="externo" data-categoria="tecnologia">
+            <div class="evento list-item" data-tipo="externo" data-categoria="tecnologia">
                 <div class="evento-data">Publicado em: 25/04/2025</div>
-                <span class="evento-tipo">Externo</span>
-                <span class="evento-tipo">Tecnologia</span>
+                <span class="evento-tipo tipo-tag">Externo</span>
+                <span class="evento-categoria tipo-tag">Tecnologia</span> <!-- Classe adicionada -->
                 <h3 class="evento-titulo">Amazonas Tech Conference 2025</h3>
                 <div class="evento-local">Local: Centro de Convenções Vasco Vasques</div>
                 <div class="evento-horario">Data: 15-17/05/2025 - 9h às 18h</div>
@@ -92,22 +97,24 @@
                     </p>
                 </div>
                 <div class="comentarios">
-                    <h4>Comentários (1)</h4>
-                    <div class="comentario">
-                        <p><strong>Lucas Santos:</strong> Como conseguimos o código de desconto?</p>
+                    <h4>Comentários (<span class="comment-count">1</span>)</h4>
+                    <div class="comment-list">
+                        <div class="comentario">
+                            <p><strong>Lucas Santos:</strong> Como conseguimos o código de desconto?</p>
+                        </div>
                     </div>
                     <div class="comentario-form">
-                        <textarea placeholder="Deixe seu comentário..."></textarea>
-                        <button>Comentar</button>
+                        <textarea placeholder="Deixe seu comentário..." aria-label="Campo para novo comentário"></textarea>
+                        <button class="btn-comment">Comentar</button>
                     </div>
                 </div>
             </div>
 
             <!-- Evento interno administrativo -->
-            <div class="evento" data-tipo="interno" data-categoria="administracao">
+            <div class="evento list-item" data-tipo="interno" data-categoria="administracao">
                 <div class="evento-data">Publicado em: 24/04/2025</div>
-                <span class="evento-tipo">CIESA</span>
-                <span class="evento-tipo">Administração</span>
+                <span class="evento-tipo tipo-tag">CIESA</span>
+                <span class="evento-categoria tipo-tag">Administração</span> <!-- Classe adicionada -->
                 <h3 class="evento-titulo">Palestra: Empreendedorismo na Era Digital</h3>
                 <div class="evento-local">Local: Auditório Principal</div>
                 <div class="evento-horario">Data: 08/05/2025 - 19h</div>
@@ -117,23 +124,27 @@
                     <p>Evento gratuito e aberto a todos os alunos. Certificado de horas complementares disponível.</p>
                 </div>
                 <div class="comentarios">
-                    <h4>Comentários (0)</h4>
+                    <h4>Comentários (<span class="comment-count">0</span>)</h4>
+                    <div class="comment-list"></div>
                     <div class="comentario-form">
-                        <textarea placeholder="Deixe seu comentário..."></textarea>
-                        <button>Comentar</button>
+                        <textarea placeholder="Deixe seu comentário..." aria-label="Campo para novo comentário"></textarea>
+                        <button class="btn-comment">Comentar</button>
                     </div>
                 </div>
             </div>
+            <!-- Mais eventos podem ser adicionados aqui -->
         </div>
 
         <!-- Paginação -->
-        <div class="paginacao">
-            <button>Anterior</button>
-            <button class="atual">1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>Próximo</button>
-        </div>
+        <nav aria-label="Paginação de eventos">
+             <div class="paginacao">
+                <button class="btn-page" data-page="prev" disabled>Anterior</button>
+                <button class="btn-page atual" data-page="1">1</button>
+                <button class="btn-page" data-page="2">2</button>
+                <button class="btn-page" data-page="3">3</button>
+                <button class="btn-page" data-page="next">Próximo</button>
+            </div>
+        </nav>
     </div>
 
     <footer>
@@ -141,73 +152,9 @@
         &copy; 2025 - CIESA Connect | Centro Universitário de Ensino Superior do Amazonas
     </footer>
 
-    <script>
-        // Implementação da funcionalidade de filtros
-        document.querySelectorAll('.filtro-btn').forEach(botao => {
-            botao.addEventListener('click', function () {
-                // Remove a classe ativo de todos os botões
-                document.querySelectorAll('.filtro-btn').forEach(btn => {
-                    btn.classList.remove('ativo');
-                });
-
-                // Adiciona a classe ativo ao botão clicado
-                this.classList.add('ativo');
-
-                // Obtém o tipo de filtro
-                const filtro = this.getAttribute('data-filtro');
-
-                // Filtra os eventos
-                document.querySelectorAll('.evento').forEach(evento => {
-                    if (filtro === 'todos') {
-                        evento.style.display = 'block';
-                    } else if (filtro === 'interno' || filtro === 'externo') {
-                        if (evento.getAttribute('data-tipo') === filtro) {
-                            evento.style.display = 'block';
-                        } else {
-                            evento.style.display = 'none';
-                        }
-                    } else {
-                        if (evento.getAttribute('data-categoria') === filtro) {
-                            evento.style.display = 'block';
-                        } else {
-                            evento.style.display = 'none';
-                        }
-                    }
-                });
-            });
-        });
-
-        // Implementação da busca
-        document.getElementById('busca-btn').addEventListener('click', function () {
-            const termoBusca = document.getElementById('busca-input').value.toLowerCase();
-
-            document.querySelectorAll('.evento').forEach(evento => {
-                const titulo = evento.querySelector('.evento-titulo').textContent.toLowerCase();
-                const descricao = evento.querySelector('.evento-descricao').textContent.toLowerCase();
-                const local = evento.querySelector('.evento-local').textContent.toLowerCase();
-
-                if (titulo.includes(termoBusca) || descricao.includes(termoBusca) || local.includes(termoBusca)) {
-                    evento.style.display = 'block';
-                } else {
-                    evento.style.display = 'none';
-                }
-            });
-        });
-
-        // Implementação do botão voltar ao topo
-        const backToTop = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 200) {
-                backToTop.style.display = 'block';
-            } else {
-                backToTop.style.display = 'none';
-            }
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+    <!-- O SCRIPT EMBUTIDO FOI REMOVIDO DAQUI -->
+    <!-- A lógica será centralizada em script.js -->
+    <script src="script.js"></script>
 </body>
 
 </html>

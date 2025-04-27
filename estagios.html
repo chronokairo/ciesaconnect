@@ -11,8 +11,9 @@
 <body>
     <header>
         <div class="logo-container">
-            <img class="img-fluid" src="images/CIESAConnect.png" alt="Ciesa" width="300">
-            <div class="logo"></div>
+            <!-- Certifique-se que a imagem /images/CIESAConnect.png existe -->
+            <img class="img-fluid" src="images/CIESAConnect.png" alt="Ciesa Logo" width="300">
+            <!-- <div class="logo"></div> --> <!-- Removido por parecer redundante -->
         </div>
     </header>
 
@@ -20,7 +21,7 @@
         <a href="index.html">Início</a>
         <a href="avisos.html">Avisos</a>
         <a href="eventos.html">Eventos</a>
-        <a href="estagios.html" class="active">Estágios</a>
+        <a href="estagios.html" class="active">Estágios</a> <!-- Classe active adicionada -->
         <a href="materiais.html">Materiais</a>
         <a href="index.html#sobre">Sobre</a>
         <a href="blog.html">Blog</a>
@@ -28,17 +29,27 @@
 
     <div class="container">
 
-        <section id="estagios">
+        <section id="oportunidades-estagio"> <!-- ID alterado para ser mais descritivo -->
             <h2>Oportunidades de Estágio</h2>
             <p>
                 Bem-vindo à seção de estágios do CIESA Connect! Aqui você encontrará as melhores oportunidades de
                 estágio e emprego para alunos do Centro Universitário de Ensino Superior do Amazonas.
             </p>
-            <h3>Vagas Recentes</h3>
+            <h3>Vagas Recentes (Exemplos)</h3> <!-- Adicionado "(Exemplos)" para clareza no protótipo -->
             <ul>
-                <li><strong>Desenvolvedor Front-End:</strong> Empresa XYZ - <a href="vaga1.html">Saiba mais</a></li>
-                <li><strong>Analista de Dados Júnior:</strong> Empresa ABC - <a href="vaga2.html">Saiba mais</a></li>
-                <li><strong>Estágio em Marketing:</strong> Agência 123 - <a href="vaga3.html">Saiba mais</a></li>
+                <li>
+                    <strong>Desenvolvedor Front-End:</strong> Empresa XYZ -
+                    <a href="#vaga-em-construcao" title="Página em construção">Saiba mais</a> <!-- Link atualizado e title adicionado -->
+                </li>
+                <li>
+                    <strong>Analista de Dados Júnior:</strong> Empresa ABC -
+                    <a href="#vaga-em-construcao" title="Página em construção">Saiba mais</a> <!-- Link atualizado e title adicionado -->
+                </li>
+                <li>
+                    <strong>Estágio em Marketing:</strong> Agência 123 -
+                    <a href="#vaga-em-construcao" title="Página em construção">Saiba mais</a> <!-- Link atualizado e title adicionado -->
+                </li>
+                 <!-- Adicionar mais vagas de exemplo se necessário -->
             </ul>
             <p>
                 Não perca a chance de impulsionar sua carreira! As vagas são atualizadas regularmente, então fique
@@ -46,13 +57,14 @@
             </p>
         </section>
 
-        <section id="dicas">
+        <section id="dicas-estagio"> <!-- ID alterado para ser mais descritivo -->
             <h2>Dicas para Conquistar um Estágio</h2>
             <ul>
-                <li>Prepare um currículo claro e objetivo.</li>
-                <li>Pesquise sobre a empresa antes da entrevista.</li>
-                <li>Desenvolva habilidades técnicas e comportamentais.</li>
-                <li>Participe de eventos e workshops para networking.</li>
+                <li>Prepare um currículo claro e objetivo, destacando suas habilidades e experiências relevantes.</li>
+                <li>Pesquise sobre a empresa e a vaga antes da entrevista para demonstrar interesse.</li>
+                <li>Desenvolva habilidades técnicas (hard skills) e comportamentais (soft skills) valorizadas no mercado.</li>
+                <li>Participe de eventos, palestras e workshops para ampliar seu networking e conhecer oportunidades.</li>
+                <li>Utilize a plataforma CIESA Carreiras (se existente) ou outros recursos de apoio oferecidos pela faculdade.</li>
             </ul>
             <p>
                 Aproveite os recursos disponíveis no CIESA Connect para se preparar e conquistar a vaga dos seus sonhos!
@@ -61,10 +73,10 @@
     </div>
 
     <footer>
-        <button id="back-to-top" class="btn">&#8593;</button>
-
+        <button id="back-to-top" aria-label="Voltar ao topo">&#8593;</button> <!-- aria-label adicionado -->
         &copy; 2025 - CIESA Connect | Centro Universitário de Ensino Superior do Amazonas
     </footer>
+
     <script src="script.js"></script>
 
 </body>

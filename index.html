@@ -4,20 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIESA Connect</title>
+    <title>CIESA Connect - Início</title> <!-- Título mais específico -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
         <div class="logo-container">
-            <img class="img-fluid" src="images/CIESAConnect.png" alt="Ciesa" width="300">
-            <div class="logo"></div>
+            <!-- Certifique-se que a imagem /images/CIESAConnect.png existe -->
+            <img class="img-fluid" src="images/CIESAConnect.png" alt="Ciesa Logo" width="300">
+            <div class="logo"></div> <!-- Este div parece redundante, considerar remover se não tiver propósito -->
         </div>
     </header>
 
     <nav>
-        <a href="index.html">Início</a>
+        <a href="index.html" class="active">Início</a> <!-- Classe active adicionada -->
         <a href="avisos.html">Avisos</a>
         <a href="eventos.html">Eventos</a>
         <a href="estagios.html">Estágios</a>
@@ -28,7 +29,7 @@
 
     <div class="container">
 
-        <section id="historia">
+        <section id="bem-vindo"> <!-- ID alterado para ser mais descritivo -->
             <h2>Bem-vindo ao CIESA Connect</h2>
             <p>
                 O CIESA Connect é um mural digital desenvolvido para facilitar a comunicação e o compartilhamento de
@@ -73,9 +74,8 @@
             </p>
         </section>
 
-        <section id="sobre">
-            </br>
-            </br>
+        <section id="sobre" class="sobre-projeto"> <!-- Classe adicionada para estilização específica se necessário -->
+            <!-- Tags <br> removidas -->
             <h2>Sobre o Projeto</h2>
             <p>
                 O <strong>CIESA Connect</strong> é uma iniciativa desenvolvida por alunos dos cursos de tecnologia do
@@ -90,7 +90,7 @@
             </p>
         </section>
 
-        <section id="site">
+        <section id="o-que-encontrar"> <!-- ID alterado para ser mais descritivo -->
             <h2>O que você encontrará no site</h2>
             <ul>
                 <li>Avisos acadêmicos e administrativos importantes.</li>
@@ -106,9 +106,9 @@
 
     <footer>
         <button id="back-to-top">&#8593;</button>
-
         &copy; 2025 - CIESA Connect | Centro Universitário de Ensino Superior do Amazonas
     </footer>
+
     <script src="script.js"></script>
 
 </body>
