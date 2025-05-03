@@ -102,6 +102,7 @@ nav a.active {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     /* Animação movida para o JS para melhor controle */
+    flex: 3; /* Ocupa 3 partes do espaço disponível */
 }
 
 /* ===== Tipografia e Layout Geral ===== */
@@ -518,3 +519,207 @@ footer {
     /* padding: 2rem; */
 }
 
+.noticias-laterais {
+    flex: 1;
+    background-color: var(--cor-container);
+    padding: 20px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem; /* Adiciona o mesmo espaçamento vertical do .container */
+}
+
+.noticia-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.noticia-item:last-child {
+    border-bottom: none;
+}
+
+.noticia-data {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.noticia-tipo {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+}
+
+.tipo-academico {
+    background-color: #d9edf7;
+    color: #31708f;
+}
+
+.tipo-urgente {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+.tipo-administrativo {
+    background-color: #fcf8e3;
+    color: #8a6d3b;
+}
+
+.noticia-titulo {
+    margin: 0.5rem 0 0.25rem 0;
+    font-size: 1rem;
+}
+
+.noticia-titulo a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+.noticia-titulo a:hover {
+    text-decoration: underline;
+}
+
+.noticia-resumo {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.mais-noticias {
+    display: block;
+    text-align: right;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #0077cc;
+    text-decoration: none;
+}
+
+.mais-noticias:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para o layout principal */
+.layout-flex {
+    display: flex;
+    gap: 20px; /* Espaçamento entre as colunas */
+    align-items: flex-start; /* Alinha o topo das colunas */
+}
+
+/* Estilo para o conteúdo principal */
+.container {
+    flex: 3; /* Ocupa 3 partes do espaço disponível */
+}
+
+/* Estilo para as notícias laterais */
+.noticias-laterais {
+    flex: 1; /* Ocupa 1 parte do espaço disponível */
+    background-color: var(--cor-container); /* Mesma cor do container principal */
+    padding: 20px;
+    border: 1px solid var(--cor-borda); /* Mesma borda do container principal */
+    border-radius: 8px; /* Mesma borda arredondada */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Mesma sombra do container principal */
+    margin-top: 1.5rem; /* Adiciona o mesmo espaçamento vertical do .container */
+}
+
+.noticias-laterais h3 {
+    font-size: 1.4rem; /* Ajuste para combinar com os títulos do body */
+    margin-bottom: 15px;
+    color: var(--cor-titulo); /* Mesma cor dos títulos */
+}
+
+.noticias-laterais ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.noticias-laterais ul li {
+    margin-bottom: 10px;
+}
+
+.noticias-laterais ul li a {
+    text-decoration: none;
+    color: var(--cor-primaria); /* Mesma cor dos links no body */
+    font-size: 1rem; /* Ajuste para combinar com o texto do body */
+    transition: color 0.3s;
+}
+
+.noticias-laterais ul li a:hover {
+    color: var(--cor-secundaria); /* Mesma cor de hover dos links no body */
+}
+
+.mais-noticias {
+    display: block;
+    text-align: right;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--cor-primaria); /* Mesma cor dos links */
+    text-decoration: none;
+}
+
+.mais-noticias:hover {
+    text-decoration: underline;
+}
+
+/* Estilo do carrossel */
+.carrossel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Oculta os itens fora da área visível */
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 1200px; /* Limita a largura máxima */
+    margin: 20px auto; /* Centraliza o carrossel */
+    padding: 20px; /* Adiciona espaçamento interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destaque */
+    border-radius: 8px; /* Bordas arredondadas */
+    background-color: var(--cor-container); /* Fundo consistente com o restante do site */
+}
+
+.carrossel-lista {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os itens */
+    transition: transform 0.3s ease-in-out; /* Animação suave ao deslizar */
+    width: 100%; /* Garante que a lista ocupe toda a largura do carrossel */
+}
+
+.carrossel .evento {
+    min-width: 80%; /* Cada item ocupa 80% da largura visível */
+    flex-shrink: 0;
+    background-color: var(--cor-container);
+    padding: 20px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--cor-primaria);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.carrossel-btn.prev {
+    left: 10px;
+}
+
+.carrossel-btn.next {
+    right: 10px;
+}
+
+.carrossel-btn:hover {
+    background-color: var(--cor-secundaria);
+}

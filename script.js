@@ -221,5 +221,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- REMOVIDO: Função loadPosts() --- 
     // A página de blog agora usa embeds do Instagram
 
+    // --- Funcionalidade de Carrossel ---
+    const carrosselLista = document.querySelector('.carrossel-lista');
+    const btnPrev = document.querySelector('.carrossel-btn.prev');
+    const btnNext = document.querySelector('.carrossel-btn.next');
+
+    let currentIndex = 0; // Índice do item visível
+    const totalItems = document.querySelectorAll('.carrossel .evento').length;
+
+    // Atualiza a posição do carrossel
+    function updateCarrossel() {
+        const itemWidth = carrosselLista.querySelector('.evento').offsetWidth + 20; // Largura do item + gap
+        carrosselLista.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+
+    // Botão "Próximo"
+    btnNext.addEventListener('click', () => {
+        if (currentIndex < totalItems - 1) {
+            currentIndex++;
+            updateCarrossel();
+        }
+    });
+
+    // Botão "Anterior"
+    btnPrev.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarrossel();
+        }
+    });
+
 }); // Fim do DOMContentLoaded
 

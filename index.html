@@ -27,81 +27,293 @@
         <a href="blog.html">Blog</a>
     </nav>
 
-    <div class="container">
+    <div class="layout-flex">
+        <div class="container">
 
-        <section id="bem-vindo"> <!-- ID alterado para ser mais descritivo -->
-            <h2>Bem-vindo ao CIESA Connect</h2>
-            <p>
-                O CIESA Connect é um mural digital desenvolvido para facilitar a comunicação e o compartilhamento de
-                informações entre alunos, professores e coordenadores do Centro Universitário de Ensino Superior do
-                Amazonas.
-            </p>
-            <h3>Recursos Disponíveis</h3>
-            <ul>
-                <li><strong>Avisos:</strong> Informativos importantes da faculdade e dos professores.</li>
-                <li><strong>Eventos:</strong> Palestras, workshops e atividades acadêmicas.</li>
-                <li><strong>Estágios:</strong> Oportunidades de estágio e emprego para alunos.</li>
-                <li><strong>Materiais:</strong> Apostilas, slides e videoaulas de apoio.</li>
-            </ul>
-        </section>
 
-        <section id="comunidade">
-            <h2>Nossa Comunidade Acadêmica</h2>
-            <h3>Quem pode utilizar?</h3>
-            <p>
-                O CIESA Connect é uma plataforma aberta para todos os estudantes, professores e funcionários do Centro
-                Universitário de Ensino Superior do Amazonas.
-            </p>
-            <h3>Como participar?</h3>
-            <p>
-                Basta acessar o site e navegar pelas diferentes seções. Alunos, professores e coordenadores podem
-                contribuir com avisos e eventos, sujeitos à moderação.
-            </p>
-        </section>
+            <!-- Carrossel de eventos -->
+            <div class="carrossel">
+                <button class="carrossel-btn prev" aria-label="Anterior">&#8249;</button>
+                <div class="carrossel-lista">
+                    <!-- Evento interno -->
+                    <div class="evento list-item" data-tipo="interno" data-categoria="tecnologia">
+                        <div class="evento-data">Publicado em: 26/04/2025</div>
+                        <span class="evento-tipo tipo-tag">CIESA</span>
+                        <span class="evento-categoria tipo-tag">Tecnologia</span>
+                        <h3 class="evento-titulo">Workshop de Desenvolvimento Web</h3>
+                        <div class="evento-local">Local: Laboratório 5, Bloco A</div>
+                        <div class="evento-horario">Data: 10/05/2025 - 14h às 18h</div>
+                        <div class="evento-descricao">
+                            <p>Workshop prático de Desenvolvimento Web com foco em HTML, CSS e JavaScript.</p>
+                        </div>
+                    </div>
 
-        <section id="destaques">
-            <h2>Destaques da Semana</h2>
-            <p>
-                Confira abaixo os principais avisos e eventos que estão acontecendo no CIESA:
-            </p>
-            <ul>
-                <li><strong>Avisos:</strong> <a href="avisos.html">Veja todos os avisos importantes</a></li>
-                <li><strong>Eventos:</strong> <a href="eventos.html">Confira os próximos eventos</a></li>
-            </ul>
-            <p>
-                Fique atento às atualizações e não perca nenhuma oportunidade importante para seu desenvolvimento
-                acadêmico.
-            </p>
-        </section>
+                    <!-- Evento externo -->
+                    <div class="evento list-item" data-tipo="externo" data-categoria="tecnologia">
+                        <div class="evento-data">Publicado em: 25/04/2025</div>
+                        <span class="evento-tipo tipo-tag">Externo</span>
+                        <span class="evento-categoria tipo-tag">Tecnologia</span>
+                        <h3 class="evento-titulo">Amazonas Tech Conference 2025</h3>
+                        <div class="evento-local">Local: Centro de Convenções Vasco Vasques</div>
+                        <div class="evento-horario">Data: 15-17/05/2025 - 9h às 18h</div>
+                        <div class="evento-descricao">
+                            <p>A maior conferência de tecnologia da região Norte.</p>
+                        </div>
+                    </div>
 
-        <section id="sobre" class="sobre-projeto"> <!-- Classe adicionada para estilização específica se necessário -->
-            <!-- Tags <br> removidas -->
-            <h2>Sobre o Projeto</h2>
-            <p>
-                O <strong>CIESA Connect</strong> é uma iniciativa desenvolvida por alunos dos cursos de tecnologia do
-                Centro Universitário de Ensino Superior do Amazonas.
-                Seu principal objetivo é centralizar informações importantes e facilitar a comunicação entre todos os
-                membros da comunidade acadêmica.
-            </p>
-            <p>
-                A plataforma adota uma abordagem simples e organizada, permitindo que todos fiquem informados sobre
-                acontecimentos importantes da instituição.
-                Como um verdadeiro mural digital, o CIESA Connect aproxima pessoas e compartilha conhecimento.
-            </p>
-        </section>
+                    <!-- Evento interno administrativo -->
+                    <div class="evento list-item" data-tipo="interno" data-categoria="administracao">
+                        <div class="evento-data">Publicado em: 24/04/2025</div>
+                        <span class="evento-tipo tipo-tag">CIESA</span>
+                        <span class="evento-categoria tipo-tag">Administração</span>
+                        <h3 class="evento-titulo">Palestra: Empreendedorismo na Era Digital</h3>
+                        <div class="evento-local">Local: Auditório Principal</div>
+                        <div class="evento-horario">Data: 08/05/2025 - 19h</div>
+                        <div class="evento-descricao">
+                            <p>Palestra com o empresário João Silva, fundador da startup XYZ.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carrossel-btn next" aria-label="Próximo">&#8250;</button>
+            </div>
 
-        <section id="o-que-encontrar"> <!-- ID alterado para ser mais descritivo -->
-            <h2>O que você encontrará no site</h2>
-            <ul>
-                <li>Avisos acadêmicos e administrativos importantes.</li>
-                <li>Eventos internos e externos de interesse para a comunidade acadêmica.</li>
-                <li>Materiais de apoio para as disciplinas.</li>
-            </ul>
-            <p>
-                Nosso objetivo é facilitar o acesso à informação, garantindo que você não perca nenhuma oportunidade
-                importante durante sua jornada acadêmica no CIESA.
-            </p>
-        </section>
+            <section id="bem-vindo"> <!-- ID alterado para ser mais descritivo -->
+                <h2>Bem-vindo ao CIESA Connect</h2>
+                <p>
+                    O CIESA Connect é um mural digital desenvolvido para facilitar a comunicação e o compartilhamento de
+                    informações entre alunos, professores e coordenadores do Centro Universitário de Ensino Superior do
+                    Amazonas.
+                </p>
+                <h3>Recursos Disponíveis</h3>
+                <ul>
+                    <li><strong>Avisos:</strong> Informativos importantes da faculdade e dos professores.</li>
+                    <li><strong>Eventos:</strong> Palestras, workshops e atividades acadêmicas.</li>
+                    <li><strong>Estágios:</strong> Oportunidades de estágio e emprego para alunos.</li>
+                    <li><strong>Materiais:</strong> Apostilas, slides e videoaulas de apoio.</li>
+                </ul>
+            </section>
+            <section id="comunidade">
+                <h2>Nossa Comunidade Acadêmica</h2>
+                <h3>Quem pode utilizar?</h3>
+                <p>
+                    O CIESA Connect é uma plataforma aberta para todos os estudantes, professores e funcionários do
+                    Centro
+                    Universitário de Ensino Superior do Amazonas.
+                </p>
+                <h3>Como participar?</h3>
+                <p>
+                    Basta acessar o site e navegar pelas diferentes seções. Alunos, professores e coordenadores podem
+                    contribuir com avisos e eventos, sujeitos à moderação.
+                </p>
+            </section>
+
+            <section id="destaques">
+                <h2>Destaques da Semana</h2>
+                <p>
+                    Confira abaixo os principais avisos e eventos que estão acontecendo no CIESA:
+                </p>
+                <ul>
+                    <li><strong>Avisos:</strong> <a href="avisos.html">Veja todos os avisos importantes</a></li>
+                    <li><strong>Eventos:</strong> <a href="eventos.html">Confira os próximos eventos</a></li>
+                </ul>
+                <p>
+                    Fique atento às atualizações e não perca nenhuma oportunidade importante para seu desenvolvimento
+                    acadêmico.
+                </p>
+            </section>
+
+            <section id="sobre" class="sobre-projeto">
+                <!-- Classe adicionada para estilização específica se necessário -->
+                <!-- Tags <br> removidas -->
+                <h2>Sobre o Projeto</h2>
+                <p>
+                    O <strong>CIESA Connect</strong> é uma iniciativa desenvolvida por alunos dos cursos de tecnologia
+                    do
+                    Centro Universitário de Ensino Superior do Amazonas.
+                    Seu principal objetivo é centralizar informações importantes e facilitar a comunicação entre todos
+                    os
+                    membros da comunidade acadêmica.
+                </p>
+                <p>
+                    A plataforma adota uma abordagem simples e organizada, permitindo que todos fiquem informados sobre
+                    acontecimentos importantes da instituição.
+                    Como um verdadeiro mural digital, o CIESA Connect aproxima pessoas e compartilha conhecimento.
+                </p>
+            </section>
+
+            <section id="o-que-encontrar"> <!-- ID alterado para ser mais descritivo -->
+                <h2>O que você encontrará no site</h2>
+                <ul>
+                    <li>Avisos acadêmicos e administrativos importantes.</li>
+                    <li>Eventos internos e externos de interesse para a comunidade acadêmica.</li>
+                    <li>Materiais de apoio para as disciplinas.</li>
+                </ul>
+                <p>
+                    Nosso objetivo é facilitar o acesso à informação, garantindo que você não perca nenhuma oportunidade
+                    importante durante sua jornada acadêmica no CIESA.
+                </p>
+            </section>
+        </div>
+
+        <!-- Notícias laterais -->
+        <aside class="noticias-laterais">
+            <h2>Últimas notícias</h2>
+
+            <!-- Barra de busca -->
+            <div class="busca">
+                <input type="text" id="busca-input" placeholder="Buscar avisos..." aria-label="Buscar avisos">
+                <button id="busca-btn" class="btn">Buscar</button>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filtros" role="group" aria-label="Filtrar avisos por tipo">
+                <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+                <button class="filtro-btn" data-filtro="academico">Acadêmicos</button>
+                <button class="filtro-btn" data-filtro="administrativo">Administrativos</button>
+                <button class="filtro-btn" data-filtro="urgente">Urgentes</button>
+            </div>
+
+
+            <!-- Lista de avisos -->
+            <div class="avisos-container list-container" id="avisos-lista">
+                <!-- Os avisos serão carregados aqui (ou podem ser mantidos como exemplos estáticos) -->
+                <!-- Exemplo de aviso acadêmico -->
+                <div class="aviso list-item" data-tipo="academico">
+                    <div class="aviso-data">26/04/2025</div>
+                    <span class="aviso-tipo tipo-tag">Acadêmico</span>
+                    <h3 class="aviso-titulo">Me sinto tão sozinho!!</h3>
+                    <div class="aviso-conteudo">
+                        <p>Pessoal informo que a aula de Introdução a Programação será na Sala de Aula Hoje.</p>
+                    </div>
+                    <div class="comentarios">
+                        <h4>Comentários (<span class="comment-count">2</span>)</h4>
+                        <div class="comment-list">
+                            <div class="comentario">
+                                <p><strong>Riad Makarem:</strong> Professor, estávamos no laboratório, estamos descendo
+                                </p>
+                            </div>
+                            <div class="comentario">
+                                <p><strong>Luan Nery:</strong> Poxa... queria tanto que fosse no laboratório</p>
+                            </div>
+                        </div>
+                        <div class="comentario-form">
+                            <textarea placeholder="Deixe seu comentário..."
+                                aria-label="Campo para novo comentário"></textarea>
+                            <button class="btn-comment">Comentar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aviso list-item" data-tipo="academico">
+                    <div class="aviso-data">26/04/2025</div>
+                    <span class="aviso-tipo tipo-tag">Acadêmico</span>
+                    <h3 class="aviso-titulo">Problemas de Internet na Faculdade</h3>
+                    <div class="aviso-conteudo">
+                        <p>Segundo profissionais da área, o problema de internet no CIESA vem pela localização, que
+                            deixa o ambiente sem acesso a internet.</p>
+                    </div>
+                    <div class="comentarios">
+                        <h4>Comentários (<span class="comment-count">2</span>)</h4>
+                        <div class="comment-list">
+                            <div class="comentario">
+                                <p><strong>Mike</strong> Acredito que o maior problema seja a inconstãncia na conexão,
+                                    não estamos cobrando uma internet muito rápida, apenas uma que fique conectada</p>
+                            </div>
+                            <div class="comentario">
+                                <p><strong>Alguém</strong> Iremos verificar a possibilidade da resolução do problema</p>
+                            </div>
+                        </div>
+                        <div class="comentario-form">
+                            <textarea placeholder="Deixe seu comentário..."
+                                aria-label="Campo para novo comentário"></textarea>
+                            <button class="btn-comment">Comentar</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Exemplo de aviso administrativo -->
+                <div class="aviso list-item" data-tipo="administrativo">
+                    <div class="aviso-data">25/04/2025</div>
+                    <span class="aviso-tipo tipo-tag">Administrativo</span>
+                    <h3 class="aviso-titulo">Manutenção nos laboratórios de informática</h3>
+                    <div class="aviso-conteudo">
+                        <p>Comunicamos que os laboratórios de informática 1 e 2 ficarão indisponíveis nos dias 27 e 28
+                            de
+                            abril para manutenção dos equipamentos.</p>
+                    </div>
+                    <div class="comentarios">
+                        <h4>Comentários (<span class="comment-count">0</span>)</h4>
+                        <div class="comment-list"></div>
+                        <div class="comentario-form">
+                            <textarea placeholder="Deixe seu comentário..."
+                                aria-label="Campo para novo comentário"></textarea>
+                            <button class="btn-comment">Comentar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aviso list-item" data-tipo="administrativo">
+                    <div class="aviso-data">25/04/2025</div>
+                    <span class="aviso-tipo tipo-tag">Administrativo</span>
+                    <h3 class="aviso-titulo">Manutenção nos laboratórios de informática</h3>
+                    <div class="aviso-conteudo">
+                        <p>Comunicamos que os laboratórios de informática 1 e 2 ficarão indisponíveis nos dias 27 e 28
+                            de
+                            abril para manutenção dos equipamentos.</p>
+                    </div>
+                    <div class="comentarios">
+                        <h4>Comentários (<span class="comment-count">0</span>)</h4>
+                        <div class="comment-list"></div>
+                        <div class="comentario-form">
+                            <textarea placeholder="Deixe seu comentário..."
+                                aria-label="Campo para novo comentário"></textarea>
+                            <button class="btn-comment">Comentar</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Exemplo de aviso urgente -->
+                <div class="aviso list-item" data-tipo="urgente">
+                    <div class="aviso-data">24/04/2025</div>
+                    <span class="aviso-tipo tipo-tag">Urgente</span>
+                    <h3 class="aviso-titulo">Prorrogação do prazo de matrícula</h3>
+                    <div class="aviso-conteudo">
+                        <p>Informamos que o prazo para renovação de matrícula foi prorrogado até 30/04/2025. Os alunos
+                            que
+                            ainda não realizaram a renovação devem procurar a secretaria acadêmica.</p>
+                    </div>
+                    <div class="comentarios">
+                        <h4>Comentários (<span class="comment-count">1</span>)</h4>
+                        <div class="comment-list">
+                            <div class="comentario">
+                                <p><strong>Pedro Alves:</strong> A renovação pode ser feita online também?</p>
+                            </div>
+                        </div>
+                        <div class="comentario-form">
+                            <textarea placeholder="Deixe seu comentário..."
+                                aria-label="Campo para novo comentário"></textarea>
+                            <button class="btn-comment">Comentar</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mais avisos podem ser adicionados aqui -->
+            </div>
+
+            <!-- Paginação -->
+            <nav aria-label="Paginação de avisos">
+                <div class="paginacao">
+                    <button class="btn-page" data-page="prev" disabled>Anterior</button>
+                    <button class="btn-page atual" data-page="1">1</button>
+                    <button class="btn-page" data-page="2">2</button>
+                    <button class="btn-page" data-page="3">3</button>
+                    <button class="btn-page" data-page="next">Próximo</button>
+                </div>
+            </nav>
+
+            <a class="mais-noticias" href="avisos.html">Ver todos os avisos</a>
+        </aside>
     </div>
 
     <footer>
